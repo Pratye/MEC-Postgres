@@ -1,0 +1,21 @@
+rest:
+  name: mec-postgres
+  port: 9593
+  endpoint: /rest
+docker:
+  command:
+    docker build -t mcp/postgres -f src/postgres/Dockerfile . 
+  config:
+    {
+        "mcpServers": {
+          "mec-postgres": {
+              "command": "docker",
+              "args": [
+                "run",
+                "-i",
+                "--rm",
+                "mcp/postgres",
+                "postgresql://host.docker.internal:5432/mydb"]
+            }
+        }
+      }
