@@ -10,6 +10,10 @@ A Model Context Protocol server that provides read-only access to PostgreSQL dat
   - Execute read-only SQL queries against the connected database
   - Input: `sql` (string): The SQL query to execute
   - All queries are executed within a READ ONLY transaction
+- **uploadCsv**
+  - Upload and process a CSV file into database tables
+  - Input: `sql` (string): The SQL query to execute
+  - All queries are executed within a READ AND WRITE transaction
 
 ### Resources
 
@@ -40,23 +44,6 @@ To use this server with the Claude Desktop app, add the following configuration 
         "--rm", 
         "mcp/postgres", 
         "postgresql://host.docker.internal:5432/mydb"]
-    }
-  }
-}
-```
-
-### NPX
-
-```json
-{
-  "mcpServers": {
-    "postgres": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-postgres",
-        "postgresql://localhost/mydb"
-      ]
     }
   }
 }
