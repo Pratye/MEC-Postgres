@@ -1,6 +1,6 @@
-# PostgreSQL
+# MEC PostgreSQL
 
-A Model Context Protocol server that provides read-only access to PostgreSQL databases. This server enables LLMs to inspect database schemas and execute read-only queries.
+A Model Context Protocol server that provides read and write access to PostgreSQL databases. This server enables LLMs to inspect database schemas and execute read and write queries.
 
 ## Components
 
